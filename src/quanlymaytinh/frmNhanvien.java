@@ -117,6 +117,11 @@ public class frmNhanvien extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(153, 153, 255));
         jButton1.setText("Làm mới");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
 
         jButton2.setBackground(new java.awt.Color(153, 153, 153));
         jButton2.setText("Thêm");
@@ -301,8 +306,13 @@ public class frmNhanvien extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(rootPane, "Sai ");
         }
-//        showResult();
     }//GEN-LAST:event_jButton4MouseClicked
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        // TODO add your handling code here:
+        list = new DAO().getListNhanVien();
+        showTable();
+    }//GEN-LAST:event_jButton1MouseClicked
 
 //    public void showResult() {
 //        NhanVien s = list.get(list.size() - 1);
@@ -310,7 +320,6 @@ public class frmNhanvien extends javax.swing.JFrame {
 //            s.getMaNV(), s.getTenNV(), s.getGioitinh(), s.getDiachi(), s.getSdt()
 //        });
 //    }
-
     /**
      * @param args the command line arguments
      */
