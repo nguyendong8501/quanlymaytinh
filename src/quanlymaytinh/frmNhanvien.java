@@ -301,15 +301,15 @@ public class frmNhanvien extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(rootPane, "Sai ");
         }
-//        showResult();
+        showResult();
     }//GEN-LAST:event_jButton4MouseClicked
 
-//    public void showResult() {
-//        NhanVien s = list.get(list.size() - 1);
-//        model.addRow(new Object[]{
-//            s.getMaNV(), s.getTenNV(), s.getGioitinh(), s.getDiachi(), s.getSdt()
-//        });
-//    }
+    public void showResult() {
+        NhanVien s = list.get(list.size() - 1);
+        model.addRow(new Object[]{
+            s.getMaNV(), s.getTenNV(), s.getGioitinh(), s.getDiachi(), s.getSdt()
+        });
+    }
 
     /**
      * @param args the command line arguments
