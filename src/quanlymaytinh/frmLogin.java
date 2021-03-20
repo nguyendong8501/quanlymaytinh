@@ -107,6 +107,7 @@ public class frmLogin extends javax.swing.JFrame {
          frmMain frm = new frmMain();
         frm.pack();
         frm.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButton1MouseClicked
 
     /**

@@ -16,6 +16,7 @@ import javax.swing.table.DefaultTableModel;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import javax.swing.table.TableModel;
 
 /**
  *
@@ -122,6 +123,11 @@ public class frmNhanvien extends javax.swing.JFrame {
                 jButton1MouseClicked(evt);
             }
         });
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setBackground(new java.awt.Color(153, 153, 153));
         jButton2.setText("Thêm");
@@ -138,6 +144,16 @@ public class frmNhanvien extends javax.swing.JFrame {
 
         jButton3.setBackground(new java.awt.Color(153, 153, 153));
         jButton3.setText("Sửa");
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setBackground(new java.awt.Color(153, 153, 153));
         jButton4.setText("Xóa");
@@ -149,9 +165,19 @@ public class frmNhanvien extends javax.swing.JFrame {
 
         jButton5.setBackground(new java.awt.Color(153, 153, 153));
         jButton5.setText("Quay lại");
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
+            }
+        });
 
         jButton6.setBackground(new java.awt.Color(153, 153, 153));
         jButton6.setText("Thoát");
+        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton6MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -233,6 +259,11 @@ public class frmNhanvien extends javax.swing.JFrame {
         ));
         jTable2.setToolTipText("");
         jTable2.setName(""); // NOI18N
+        jTable2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable2MouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(jTable2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -313,6 +344,63 @@ public class frmNhanvien extends javax.swing.JFrame {
         list = new DAO().getListNhanVien();
         showTable();
     }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        // TODO add your handling code here:
+        NhanVien s = new NhanVien();
+        s.setMaNV(txtManv.getText());
+        s.setTenNV(txtTennv.getText());
+        s.setGioitinh(txtGioitinh.getText());
+        s.setDiachi(txtDiachi.getText());
+        s.setSdt(txtSdt.getText());
+        if (new DAO().updateNhanVien(s)) {
+            list = new DAO().getListNhanVien();
+            showTable();
+            JOptionPane.showMessageDialog(rootPane, "Ok con dê");
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "Sai ");
+        }
+
+    }//GEN-LAST:event_jButton3MouseClicked
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jTable2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable2MouseClicked
+        // TODO add your handling code here:
+        int i = jTable2.getSelectedRow();
+        TableModel model = jTable2.getModel();
+        txtManv.setText(model.getValueAt(i, 0).toString());
+        txtTennv.setText(model.getValueAt(i, 1).toString());
+        txtGioitinh.setText(model.getValueAt(i, 2).toString());
+        txtDiachi.setText(model.getValueAt(i, 3).toString());
+        txtSdt.setText(model.getValueAt(i, 4).toString());
+    }//GEN-LAST:event_jTable2MouseClicked
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        txtManv.setText("");
+        txtTennv.setText("");
+        txtGioitinh.setText("");
+        txtDiachi.setText("");
+        txtSdt.setText("");
+
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+        // TODO add your handling code here:
+        frmMain frm = new frmMain();
+        frm.pack();
+        frm.setVisible(true);
+        dispose();
+        
+    }//GEN-LAST:event_jButton5MouseClicked
+
+    private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_jButton6MouseClicked
 
 //    public void showResult() {
 //        NhanVien s = list.get(list.size() - 1);

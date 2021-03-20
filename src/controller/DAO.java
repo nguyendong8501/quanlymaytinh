@@ -73,6 +73,27 @@ public class DAO {
         }
         return false;
     }
+       public boolean updateNhanVien(NhanVien s){
+        String sql = "UPDATE tblNhanVien SET MaNV ='"+ s.getMaNV()+"',TenNV = '"+s.getTenNV()+"',Gioitinh='"+s.getGioitinh()+"',"
+                + "Diachi = '"+s.getDiachi()+"',Sdt='"+s.getSdt()+"' "
+                + "WHERE MaNV='"+s.getMaNV()+" '";
+        try {
+            PreparedStatement ps = conn.prepareStatement(sql);
+//            ps.setString(1,s.getMaNV());
+//            ps.setString(2,s.getTenNV());
+//            ps.setString(3,s.getGioitinh());
+//            ps.setString(4,s.getDiachi());
+//            ps.setString(5,s.getSdt());
+            
+            return ps.executeUpdate(sql)>0;
+            
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+      
     public ArrayList<NhanVien> getListNhanVien(){
         ArrayList<NhanVien> list = new ArrayList<>();
         String sql = "select * from tblNhanVien";
