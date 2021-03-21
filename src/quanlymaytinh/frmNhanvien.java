@@ -105,6 +105,7 @@ public class frmNhanvien extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(102, 204, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Thông tin nhân viên ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12))); // NOI18N
+        jPanel2.setToolTipText("");
 
         jLabel1.setText("Mã nhân viên ");
 
