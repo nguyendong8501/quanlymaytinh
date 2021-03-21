@@ -51,6 +51,11 @@ public class frmMain extends javax.swing.JFrame {
         });
 
         jButton3.setText("Nhà cung cấp");
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
 
         jButton4.setText("Hóa đơn nhập");
 
@@ -99,8 +104,20 @@ public class frmMain extends javax.swing.JFrame {
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
         // TODO add your handling code here:
-        
+           frmKhachHang frm = new frmKhachHang();
+        frm.pack();
+        frm.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        // TODO add your handling code here:
+            frmNhaCungCap frm = new frmNhaCungCap();
+        frm.pack();
+        frm.setVisible(true);
+        dispose();
+        
+    }//GEN-LAST:event_jButton3MouseClicked
 
     /**
      * @param args the command line arguments
