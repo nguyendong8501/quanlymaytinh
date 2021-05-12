@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 100px;
+    z-index: 10000;
+    transition: 0.6s; 
+}
+header .logo{
+    position: relative;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.6s; 
+}
+header #toggle{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.banner{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px;
+    background: url(img/pic1.jpg);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    transition: 0.6s;
+}
+.content{
+    max-width: 600px;
+}
+.content h2{
+    color: #fff;
+    font-size: 2.5em;
+
+}
+.content h2 span{
+    color: #40c3ff;
+    font-size: 1.2em;
+
+}
+.content p{
+    font-size: 1.2em;
+    color: #000;
+    font-weight: 300;
+}
+.content a{
+    position: relative;
+    display: inline-block;
+    margin-top: 20px;
+    background:#fff;
+    color: #000;
+    padding: 10px 30px;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+.sci{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    left: 740px;
+}
+.sci li{
+    list-style: none;
+}
+.sci li a
+{
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 60px;
+    height: 60px;
+    text-decoration: none;
+    border: 1px solid #fa4299 #fff;
+    margin: 10px 0 0;
+}
+.sci li a:hover{
+    background: -webkit-linear-gradient(left, #a445b2, #fa4299);
+}
+.sci li a img{
+    max-width: 45px;
+    filter: invert(1);
+}
